@@ -1,5 +1,12 @@
 package org.example;
 
+/**
+ * Complex class implements complex number calculations.
+ *
+ * @author Zsolt Harmath
+ * @version 1.0
+ * @since 2025-10-01
+ */
 class Complex {
     double real;
     double imag;
@@ -12,6 +19,9 @@ class Complex {
     /**
      * Constructor receiving a complex number as string
      *
+     * @author Zsolt Harmath
+     * @description Can contain math bugs.
+     * @since 2025-10-01
      * @param zStr "a+bi" formatted complex number
      */
     public Complex(String zStr) {
