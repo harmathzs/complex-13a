@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static boolean isRunningTest = false;
     public static char testChoice = '0';
+    public static String testAStr = "1+2i";
+    public static String testBStr = "3+4i";
+    public static String testZStr = "5+6i";
 
     public static void main(String[] args) {
         char choice;
@@ -27,10 +30,15 @@ public class Main {
             switch (choice) {
                 case '1': {
                     System.out.print("a: ");
-                    String aStr = input.nextLine();
+                    String aStr;
+                    if (isRunningTest) aStr = testAStr;
+                    else aStr = input.nextLine();
                     Complex a = new Complex(aStr);
+
                     System.out.print("b: ");
-                    String bStr = input.nextLine();
+                    String bStr;
+                    if (isRunningTest) bStr = testBStr;
+                    else bStr = input.nextLine();
                     Complex b = new Complex(bStr);
 
                     Complex c = a;
@@ -42,10 +50,15 @@ public class Main {
                 }
                 case '2': {
                     System.out.print("a: ");
-                    String aStr = input.nextLine();
+                    String aStr;
+                    if (isRunningTest) aStr = testAStr;
+                    else aStr = input.nextLine();
                     Complex a = new Complex(aStr);
+
                     System.out.print("b: ");
-                    String bStr = input.nextLine();
+                    String bStr;
+                    if (isRunningTest) bStr = testBStr;
+                    else bStr = input.nextLine();
                     Complex b = new Complex(bStr);
 
                     Complex c = a;
@@ -57,10 +70,15 @@ public class Main {
                 }
                 case '3': {
                     System.out.print("a: ");
-                    String aStr = input.nextLine();
+                    String aStr;
+                    if (isRunningTest) aStr = testAStr;
+                    else aStr = input.nextLine();
                     Complex a = new Complex(aStr);
+
                     System.out.print("b: ");
-                    String bStr = input.nextLine();
+                    String bStr;
+                    if (isRunningTest) bStr = testBStr;
+                    else bStr = input.nextLine();
                     Complex b = new Complex(bStr);
 
                     Complex c = a;
@@ -72,8 +90,10 @@ public class Main {
                 }
                 case '4': {
                     System.out.print("z: ");
-                    String aStr = input.nextLine();
-                    Complex z = new Complex(aStr);
+                    String zStr;
+                    if (isRunningTest) zStr = testZStr;
+                    else zStr = input.nextLine();
+                    Complex z = new Complex(zStr);
 
                     double abs = z.abs();
 
@@ -83,8 +103,10 @@ public class Main {
                 }
                 case '5': {
                     System.out.print("z: ");
-                    String aStr = input.nextLine();
-                    Complex z = new Complex(aStr);
+                    String zStr;
+                    if (isRunningTest) zStr = testZStr;
+                    else zStr = input.nextLine();
+                    Complex z = new Complex(zStr);
 
                     double arg = z.angle();
 
@@ -98,6 +120,6 @@ public class Main {
                     System.out.println("");
                 }
             }
-        } while (choice != '0');
+        } while (choice != '0' && !isRunningTest);
     }
 }
