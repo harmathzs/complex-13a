@@ -3,6 +3,9 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+    public static boolean isRunningTest = false;
+    public static char testChoice = '0';
+
     public static void main(String[] args) {
         char choice;
         do {
@@ -17,7 +20,10 @@ public class Main {
 
             Scanner input = new Scanner(System.in);
             System.out.print("Choose (0-5): ");
-            choice = input.nextLine().charAt(0);
+
+            if (isRunningTest) choice = testChoice;
+            else choice = input.nextLine().charAt(0);
+
             switch (choice) {
                 case '1': {
                     System.out.print("a: ");
