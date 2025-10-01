@@ -9,8 +9,27 @@ class Complex {
         this.imag = imag;
     }
 
+    /**
+     * Constructor receiving a complex number as string
+     *
+     * @param zStr "a+bi" formatted complex number
+     */
     public Complex(String zStr) {
-        // TODO - implement
+        // "1+2i"
+        String plus = "+";
+        String[] split;
+        if (zStr.lastIndexOf("+")>zStr.lastIndexOf("-")) {
+            split = zStr.replace('+', 'P').split("P");
+        } else {
+            split = zStr.split("-");
+        }
+
+        real = Double.parseDouble(split[0]);
+
+        // TODO - fix negative bugs: -1+2i, -3-4i
+        String split2 = "";
+        for (int i=0; i<split[1].length()-1; i++) split2 += split[1].charAt(i);
+        imag = Double.parseDouble(split2);
     }
 
     Complex add(Complex other) {
